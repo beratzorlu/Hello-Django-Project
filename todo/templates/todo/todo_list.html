@@ -1,0 +1,17 @@
+<!-- The reason that we're creating this secondary todo folder inside the 
+templates directory is because when Django looks for templates inside of 
+these apps it will always return the first one that it finds. So by separating 
+it into a folder that matches its app name. We can ensure that we're getting 
+the right template even if there's another template of the same name in a different app. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Things I Need To Do:</h1>
+</body>
+</html>
