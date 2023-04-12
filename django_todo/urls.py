@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo.views import get_todo_list, add_item
+from todo.views import get_todo_list, add_item, edit_item
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_todo_list, name='get_todo_list'),
-    path('add', add_item, name='add')
+    path('add', add_item, name='add'),
+    # The <> syntax below is how the item_id in links and forms navigates
+    # to this view, which it already expects is as a parameter.
+    path('edit/<item_id>', edit_item, name='edit')
+
 ]

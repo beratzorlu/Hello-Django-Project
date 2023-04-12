@@ -14,8 +14,8 @@ the right template even if there's another template of the same name in a differ
 </head>
 
 <body>
-    <h1>Edit a Todo Item</h1>
-    <form method="POST" action="add">
+    <h1>Add a Todo Item</h1>
+    <form method="POST">
         <!-- crossite request forgery token, it's a randomly generated value -->
         <!-- It works to guarantee that the data is coming from this form and not
         somewhere else. -->
@@ -24,7 +24,7 @@ the right template even if there's another template of the same name in a differ
         {{ form.as_p }}
         <div>
             <p>
-                <button type="submit">Add Item</button>
+                <button type="submit">Update</button>
             </p>
         </div>
     </form>
