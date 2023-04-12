@@ -19,21 +19,9 @@ the right template even if there's another template of the same name in a differ
         <!-- crossite request forgery token, it's a randomly generated value -->
         <!-- It works to guarantee that the data is coming from this form and not
         somewhere else. -->
+        <!-- as_p tells Django to add paragraph format while rendering form. -->
         {% csrf_token %}
-        <div>
-            <p>
-                <!-- Use name to access input value in its view function.
-                Use id for targeting for CSS, label etc. -->
-                <label for="id_name">Name:</label>
-                <input type="text" id="id_name" name="item_name">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_done">Done: </label>
-                <input type="checkbox" id="id_done" name="done">
-            </p>
-        </div>
+        {{ form.as_p }}
         <div>
             <p>
                 <button type="submit">Add Item</button>
