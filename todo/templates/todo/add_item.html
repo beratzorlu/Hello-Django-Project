@@ -16,6 +16,10 @@ the right template even if there's another template of the same name in a differ
 <body>
     <h1>Add a Todo Item</h1>
     <form method="POST" action="add">
+        <!-- crossite request forgery token, it's a randomly generated value -->
+        <!-- It works to guarantee that the data is coming from this form and not
+        somewhere else. -->
+        {% csrf_token %}
         <div>
             <p>
                 <!-- Use name to access input value in its view function.
@@ -27,7 +31,7 @@ the right template even if there's another template of the same name in a differ
         <div>
             <p>
                 <label for="id_done">Done: </label>
-                <input type="checkbox" id="id_done" name="item_done">
+                <input type="checkbox" id="id_done" name="done">
             </p>
         </div>
         <div>
