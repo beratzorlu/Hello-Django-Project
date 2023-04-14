@@ -1,9 +1,11 @@
 from django.test import TestCase
+from .models import Item
 
-# Create your tests here.
 
+class TestModels(TestCase):
 
-class TestDjango(TestCase):
-    # Inherits all testing functionality.
-    def test_if_works(self):
-        self.assertEqual(1, 1)
+    def test_done_defaults_to_false(self):
+        # Create temp item.
+        item = Item.objects.create(name="Test Item")
+        # Check if item is false by default.
+        self.assertFalse(item.done)
